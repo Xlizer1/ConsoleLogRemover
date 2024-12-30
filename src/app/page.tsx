@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ConsoleLogRemover = () => {
@@ -34,7 +34,7 @@ const ConsoleLogRemover = () => {
     return processedLines.join("\n");
   };
 
-  const handleInputChange = (e: { target: { value: any } }) => {
+  const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const newInput = e.target.value;
     setInput(newInput);
     setOutput(removeConsoleLogs(newInput));
